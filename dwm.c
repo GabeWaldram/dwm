@@ -255,7 +255,7 @@ static char stext[256];
 static int screen;
 static int sw, sh;           /* X display screen geometry width, height */
 static int bh, blw = 0;      /* bar geometry */
-+static int enablegaps = 1;   /* enables gaps, used by togglegaps */
+static int enablegaps = 1;   /* enables gaps, used by togglegaps */
 static int lrpad;            /* sum of left and right padding for text */
 static int (*xerrorxlib)(Display *, XErrorEvent *);
 static unsigned int numlockmask = 0;
@@ -1798,7 +1798,7 @@ tagmon(const Arg *arg)
 void
 tile(Monitor *m)
 {
-+	unsigned int i, n, h, r, oe = enablegaps, ie = enablegaps, mw, my, ty;
+	unsigned int i, n, h, r, oe = enablegaps, ie = enablegaps, mw, my, ty;
 	Client *c;
 
 	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
