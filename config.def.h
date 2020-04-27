@@ -46,6 +46,8 @@ static const Rule rules[] = {
 	{ "discord",  		NULL,       NULL,       1 << 6,            0,           -1 },
 	{ "whatsapp-nativefier-d52542",  		NULL,       NULL,       1 << 6,            0,           -1 },
 	{ "spotify",  		NULL,       NULL,       1 << 7,            0,           -1 },
+	{ "pavucontrol",  	NULL,       NULL,       NULL,		   0,           -1 },
+	{ "arandr",		NULL,       NULL,       NULL,		   0,           -1 },
 };
 
 /* layout(s) */
