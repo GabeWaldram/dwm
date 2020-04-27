@@ -91,6 +91,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
+#include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier			key		function	argument */
 	STACKKEYS(MODKEY,				focus)
@@ -147,6 +148,14 @@ static Key keys[] = {
 
 	{ 0,				XK_Print,	spawn,		SHCMD("flameshot gui") },
 	{ MODKEY,			XK_Print,	spawn,		SHCMD("flameshot screen -p ~/Pictures/Screenshots") },
+	{ MODKEY,			XK_F6,		spawn,		SHCMD("dmenumount") },
+	{ MODKEY,			XK_F7,		spawn,		SHCMD("dmenuumount") },
+	{ MODKEY,			XK_F8,		spawn,		SHCMD("arandr") },
+	{ 0, XF86XK_AudioMute, 		spawn,		SHCMD("pulseaudio-ctl mute") },
+	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		SHCMD("pulseaudio-ctl down") },
+	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		SHCMD("pulseaudio-ctl up") },
+	{ 0, XF86XK_Sleep,		spawn,		SHCMD("betterlockscreen -s dimblur -t \">_\"") },
+	{ 0, XF86XK_Display,		spawn,		SHCMD("arandr") },
 
 	//{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[6]} },
 	//{ MODKEY,                       XK_space,  setlayout,      {0} },
