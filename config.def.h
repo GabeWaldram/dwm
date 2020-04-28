@@ -98,7 +98,6 @@ static Key keys[] = {
 	/* modifier			key		function	argument */
 	STACKKEYS(MODKEY,				focus)
 	STACKKEYS(MODKEY|ShiftMask,			push)
-	{ MODKEY,			XK_Escape,	quit,		{0} },
 	TAGKEYS(			XK_1,				0)
 	TAGKEYS(			XK_2,				1)
 	TAGKEYS(			XK_3,				2)
@@ -112,6 +111,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,		tag,            {.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Reboot computer?\")\" = Yes ] && sudo -A reboot") },
 	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Shutdown computer?\")\" = Yes ] && sudo -A shutdown -h now") },
+	{ MODKEY,			XK_Escape,	quit,		{0} },
 
 	{ MODKEY,                       XK_Tab,		view,           {0} },
 	{ MODKEY,                       XK_d,		spawn,          SHCMD("rofi -show run") },
@@ -119,8 +119,8 @@ static Key keys[] = {
 	{ MODKEY,	                XK_Return,	spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,	togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,		togglebar,      {0} },
-	{ MODKEY,                       XK_c,		incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_c,		incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_[,		incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_],		incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,		setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,		setmfact,       {.f = +0.05} },
 	{ MODKEY, 	                XK_z,		incrgaps,       {.i = +1 } },
@@ -150,6 +150,7 @@ static Key keys[] = {
 
 	{ 0,				XK_Print,	spawn,		SHCMD("flameshot gui") },
 	{ MODKEY,			XK_Print,	spawn,		SHCMD("flameshot screen -p ~/Pictures/Screenshots") },
+	{ MODKEY,			XK_F4,		spawn,		SHCMD("st -e nmtui") },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("arandr") },
