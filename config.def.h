@@ -157,6 +157,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		SHCMD("pulseaudio-ctl down") },
 	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		SHCMD("pulseaudio-ctl up") },
 	{ 0, XF86XK_Sleep,		spawn,		SHCMD("betterlockscreen -s dimblur -t \">_\"") },
+	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("touchpadToggle") },
 	{ 0, XF86XK_Display,		spawn,		SHCMD("arandr") },
 
 	//{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[6]} },
