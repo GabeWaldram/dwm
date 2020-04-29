@@ -38,16 +38,17 @@ static const Rule rules[] = {
 	*	WM_CLASS(STRING) = instance, class
 	*	WM_NAME(STRING) = title
 	*/
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "firefox",  		NULL,       NULL,       1 << 1,            0,           -1 },
-	{ "libreoffice",	NULL,       NULL,       1 << 3,            0,           -1 },
-	{ "Gimp",   		NULL,       NULL,       1 << 4,            0,           -1 },
-	{ "vlc",   		NULL,       NULL,       1 << 5,            0,           -1 },
-	{ "discord",  		NULL,       NULL,       1 << 6,            0,           -1 },
-	{ "whatsapp-nativefier-d52542",  		NULL,       NULL,       1 << 6,            0,           -1 },
-	{ "spotify",  		NULL,       NULL,       1 << 7,            0,           -1 },
-	{ "pavucontrol",  	NULL,       NULL,       NULL,		   1,           -1 },
-	{ "arandr",		NULL,       NULL,       NULL,		   1,           -1 },
+	/* class      		instance	title	tags mask	isfloating	isterminal	noswallow	monitor */
+	{ "firefox",  		NULL,		NULL,	1 << 1,		0,		0,		0,		-1 },
+	{ "libreoffice",	NULL,		NULL,	1 << 3,		0,		0,		0,		-1 },
+	{ "Gimp",   		NULL,		NULL,	1 << 4,		0,		0,		0,		-1 },
+	{ "vlc",   		NULL,		NULL,	1 << 5,		0,		0,		0,		-1 },
+	{ "discord",  		NULL,		NULL,	1 << 6,		0,		0,		0,		-1 },
+	{ "whatsapp-nativefier-d52542", NULL, NULL,	1 << 6,		0,		0,		0,		-1 },
+	{ "spotify",  		NULL,		NULL,	1 << 7,		0,		0,		0,		-1 },
+	{ "pavucontrol",  	NULL,		NULL,	NULL,		1,		0,		0,		-1 },
+	{ "arandr",		NULL,		NULL,	NULL,		1,		0,		0,		-1 },
+	{ "st",			NULL,		NULL,	NULL,		0,		1,		1,		-1 },
 };
 
 /* layout(s) */
