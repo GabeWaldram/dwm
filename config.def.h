@@ -93,6 +93,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *upvol[]	= { "pulseaudio-ctl", "up", NULL };
+static const char *downvol[]	= { "pulseaudio-ctl", "down", NULL };
+static const char *mutevol[]	= { "pulseaudio-ctl", "mute", NULL };
 
 #include <X11/XF86keysym.h>
 static Key keys[] = {
@@ -155,9 +158,9 @@ static Key keys[] = {
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("arandr") },
-	{ 0, XF86XK_AudioMute, 		spawn,		SHCMD("pulseaudio-ctl mute") },
-	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		SHCMD("pulseaudio-ctl down") },
-	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		SHCMD("pulseaudio-ctl up") },
+	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		{.v = upvol }	},
+	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		{.v = downvol }	},
+	{ 0, XF86XK_AudioMute, 		spawn,		{.v = mutevol }	},
 	{ 0, XF86XK_Sleep,		spawn,		SHCMD("betterlockscreen -s dimblur -t \">_\"") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("touchpadToggle") },
 	{ 0, XF86XK_Display,		spawn,		SHCMD("arandr") },
