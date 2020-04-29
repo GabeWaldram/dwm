@@ -93,9 +93,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-static const char *upvol[]	= { "pulseaudio-ctl", "up", NULL };
-static const char *downvol[]	= { "pulseaudio-ctl", "down", NULL };
-static const char *mutevol[]	= { "pulseaudio-ctl", "mute", NULL };
+static const char *upvol[]	= { "vol.sh", "up", NULL };
+static const char *downvol[]	= { "vol.sh", "down", NULL };
+static const char *mutevol[]	= { "vol.sh", "mute", NULL };
 
 #include <X11/XF86keysym.h>
 static Key keys[] = {
