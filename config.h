@@ -151,6 +151,7 @@ static Key keys[] = {
 
 	{ 0,				XK_Print,	spawn,		SHCMD("flameshot gui") },
 	{ MODKEY,			XK_Print,	spawn,		SHCMD("flameshot screen -p ~/Pictures/Screenshots") },
+	{ MODKEY,			XK_F1,		spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -i -nb darkred -sb red -sf white -nf gray -p \"Hibernate computer?\")\" = Yes ] && hibernate") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD("st -e nmtui") },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("dmenuumount") },
