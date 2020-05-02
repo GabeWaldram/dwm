@@ -113,8 +113,8 @@ static Key keys[] = {
 	TAGKEYS(			XK_9,				8)
 	{ MODKEY,                       XK_0,		view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,		tag,            {.ui = ~0 } },
-	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Reboot computer?\")\" = Yes ] && sudo -A reboot") },
-	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Shutdown computer?\")\" = Yes ] && sudo -A shutdown -h now") },
+	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Reboot?\")\" = Yes ] && sudo -A reboot") },
+	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Shutdown?\")\" = Yes ] && sudo -A shutdown -h now") },
 	{ MODKEY,			XK_Escape,	quit,		{0} },
 
 	{ MODKEY,                       XK_Tab,		view,           {0} },
@@ -153,7 +153,7 @@ static Key keys[] = {
 
 	{ 0,				XK_Print,	spawn,		SHCMD("flameshot gui") },
 	{ MODKEY,			XK_Print,	spawn,		SHCMD("flameshot screen -p ~/Pictures/Screenshots") },
-	{ MODKEY,			XK_F1,		spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Hibernate computer?\")\" = Yes ] && hibernate") },
+	{ MODKEY,			XK_F1,		spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Hibernate?\")\" = Yes ] && hibernate") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD("st -e nmtui") },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("dmenuumount") },
