@@ -115,7 +115,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,		tag,            {.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Reboot?\")\" = Yes ] && sudo -A reboot") },
 	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Shutdown?\")\" = Yes ] && sudo -A shutdown -h now") },
-	{ MODKEY,			XK_Escape,	quit,		{0} },
+	{ MODKEY,			XK_Escape,	spawn,		SHCMD("[ \"$(printf \"No\\nYes\" | dmenu -lines 2 -p \"Restart dwm?\")\" = Yes ] && dwm 2> ~/.dwm.log") },
+	//{ MODKEY,			XK_Escape,	quit,		{0} },
 
 	{ MODKEY,                       XK_Tab,		view,           {0} },
 	{ MODKEY,                       XK_d,		spawn,          SHCMD("rofi -show run") },
