@@ -121,7 +121,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,		spawn,          SHCMD("rofi -show run") },
 	{ MODKEY|ShiftMask,             XK_d,		spawn,          SHCMD("rofi -show window") },
 	{ MODKEY,	                XK_Return,	spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,		XK_Return,	spawn,          SHCMD("st -e tmain") },
+	{ MODKEY|ShiftMask,		XK_Return,	spawn,          SHCMD("st -e tmux new -A -s main") },
 	{ MODKEY,                       XK_grave,	togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,		togglebar,      {0} },
 	{ MODKEY,                       XK_t,		incnmaster,     {.i = +1 } },
