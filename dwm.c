@@ -370,15 +370,17 @@ combotag(const Arg *arg) {
 }
 
 void
-comboview(const Arg *arg) {
+comboview(const Arg *arg)
+{
 	unsigned newtags = arg->ui & TAGMASK;
 	if (combo) {
 		selmon->tagset[selmon->seltags] |= newtags;
 	} else {
 		selmon->seltags ^= 1;	/*toggle tagset*/
 		combo = 1;
-		if (newtags)
-			selmon->tagset[selmon->seltags] = newtags;
+		if (newtags) {
+			pertagview(&((Arg) { .ui = newtags }));
+		}
 	}
 	focus(NULL);
 	arrange(selmon);
