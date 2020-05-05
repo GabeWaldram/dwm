@@ -356,7 +356,8 @@ keyrelease(XEvent *e) {
 }
 
 void
-combotag(const Arg *arg) {
+combotag(const Arg *arg)
+{
 	if(selmon->sel && arg->ui & TAGMASK) {
 		if (combo) {
 			selmon->sel->tags |= arg->ui & TAGMASK;
@@ -375,15 +376,12 @@ comboview(const Arg *arg)
 	unsigned newtags = arg->ui & TAGMASK;
 	if (combo) {
 		selmon->tagset[selmon->seltags] |= newtags;
+		focus(NULL);
+		arrange(selmon);
 	} else {
-		selmon->seltags ^= 1;	/*toggle tagset*/
+		view(arg); /* <--- dirty hack */
 		combo = 1;
-		if (newtags) {
-			pertagview(&((Arg) { .ui = newtags }));
-		}
 	}
-	focus(NULL);
-	arrange(selmon);
 }
 
 void
