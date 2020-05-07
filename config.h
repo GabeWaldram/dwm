@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -65,8 +65,8 @@ static const Layout layouts[] = {
 	{ "tile",      tile },    /* first entry is default */
 	{ "spiral",      spiral },
 	{ "dwindle",      dwindle },
-	{ "🔍",      monocle },
 	{ "float",      NULL },    /* no layout function means floating behavior */
+	{ "🔍",      monocle },
 };
 
 /* key definitions */
@@ -126,8 +126,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Return,	spawn,          SHCMD("st -e tmux new -A -s main") },
 	{ MODKEY,                       XK_grave,	togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,		togglebar,      {0} },
-	{ MODKEY,                       XK_t,		incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_t,		incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_bracketleft,		incnmaster,     {.i = +1 } },
+	{ MODKEY,			XK_bracketright,	incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,		setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,		setmfact,       {.f = +0.05} },
 	{ MODKEY, 	                XK_z,		incrgaps,       {.i = +1 } },
@@ -137,11 +137,11 @@ static Key keys[] = {
 	{ MODKEY,             		XK_q,		killclient,     {0} },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("whatsapp-nativefier-dark") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e ranger") },
-	{ MODKEY,                       XK_y,		setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_u,		setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_i,		setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_o,		setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_p,		setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_t,		setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_y,		setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_u,		setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_i,		setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_o,		setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_space,	togglefloating, {0} },
 	{ MODKEY,	                XK_f,		togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,		XK_f,		spawn,		SHCMD("firefox") },
