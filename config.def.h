@@ -161,6 +161,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("arandr") },
+	{ MODKEY,			XK_F9,		spawn,		SHCMD("xfce4-power-manager-settings") },
 	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		{.v = upvol }	},
 	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		{.v = downvol }	},
 	{ 0, XF86XK_AudioMute, 		spawn,		{.v = mutevol }	},
