@@ -10,7 +10,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Inconsolata for Powerline:size=12", "Siji:size=16:style=Regular", "Font Awesome 5 Free:size=10", "Font Awesome 5 Brands:size=10" };
+static const char *fonts[]          = { "Inconsolata for Powerline:size=12", "Font Awesome 5 Free:size=10", "Font Awesome 5 Brands:size=10" };
+//static const char *fonts[]          = { "Inconsolata for Powerline:size=12", "Siji:size=16:style=Regular", "Font Awesome 5 Free:size=10", "Font Awesome 5 Brands:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -161,6 +162,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("arandr") },
+	{ MODKEY,			XK_F9,		spawn,		SHCMD("xfce4-power-manager-settings") },
 	{ 0, XF86XK_AudioRaiseVolume, 	spawn, 		{.v = upvol }	},
 	{ 0, XF86XK_AudioLowerVolume, 	spawn, 		{.v = downvol }	},
 	{ 0, XF86XK_AudioMute, 		spawn,		{.v = mutevol }	},
